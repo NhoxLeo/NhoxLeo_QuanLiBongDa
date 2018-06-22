@@ -18,6 +18,7 @@ namespace QuanLyBongDa.Form_Designs
             InitializeComponent();
             //Status("ok");
             LoadDataGV();
+            FilltextMuaGiai();
         }
         private void LoadDataGV()
         {
@@ -170,7 +171,6 @@ namespace QuanLyBongDa.Form_Designs
             {
                 throw ex;
             }
-
         }
         private DataTable createTable()
         {
@@ -236,7 +236,7 @@ namespace QuanLyBongDa.Form_Designs
         private void addClubButton_Click(object sender, EventArgs e)
         {
             Status("them");
-            FilltextMuaGiai();
+            //FilltextMuaGiai();
             LoadDataGV();
             ClearText();
         }

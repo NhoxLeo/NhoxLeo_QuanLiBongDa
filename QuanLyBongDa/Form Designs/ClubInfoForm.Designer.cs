@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.treeView1 = new System.Windows.Forms.TreeView();
-            this.listView1 = new System.Windows.Forms.ListView();
+            this.listviewPlayer = new System.Windows.Forms.ListView();
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,6 +47,7 @@
             this.cauthuTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.CAUTHUTableAdapter();
             this.sanTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter();
             this.muagiaiTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter();
+            this.cauthU_MUAGIAITableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.CAUTHU_MUAGIAITableAdapter();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).BeginInit();
             this.SuspendLayout();
@@ -57,22 +58,24 @@
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(238, 451);
             this.treeView1.TabIndex = 0;
+            this.treeView1.AfterExpand += new System.Windows.Forms.TreeViewEventHandler(this.treeView1_AfterExpand);
+            this.treeView1.NodeMouseClick += new System.Windows.Forms.TreeNodeMouseClickEventHandler(this.treeView1_NodeMouseClick);
             // 
-            // listView1
+            // listviewPlayer
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listviewPlayer.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeader1,
             this.columnHeader2,
             this.columnHeader3,
             this.columnHeader4,
             this.columnHeader5,
             this.columnHeader6});
-            this.listView1.Location = new System.Drawing.Point(240, 121);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(559, 330);
-            this.listView1.TabIndex = 2;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.listviewPlayer.Location = new System.Drawing.Point(240, 121);
+            this.listviewPlayer.Name = "listviewPlayer";
+            this.listviewPlayer.Size = new System.Drawing.Size(559, 330);
+            this.listviewPlayer.TabIndex = 2;
+            this.listviewPlayer.UseCompatibleStateImageBehavior = false;
+            this.listviewPlayer.View = System.Windows.Forms.View.Details;
             // 
             // columnHeader1
             // 
@@ -192,13 +195,17 @@
             // 
             this.muagiaiTableAdapter1.ClearBeforeFill = true;
             // 
+            // cauthU_MUAGIAITableAdapter1
+            // 
+            this.cauthU_MUAGIAITableAdapter1.ClearBeforeFill = true;
+            // 
             // ClubInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(799, 450);
             this.Controls.Add(this.tableLayoutPanel2);
-            this.Controls.Add(this.listView1);
+            this.Controls.Add(this.listviewPlayer);
             this.Controls.Add(this.treeView1);
             this.Name = "ClubInfoForm";
             this.Text = "Thông tin đội bóng";
@@ -212,7 +219,7 @@
         #endregion
 
         private System.Windows.Forms.TreeView treeView1;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.ListView listviewPlayer;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader3;
@@ -230,5 +237,6 @@
         private GIAIVODICHBONGDADataSetTableAdapters.CAUTHUTableAdapter cauthuTableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter sanTableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter muagiaiTableAdapter1;
+        private GIAIVODICHBONGDADataSetTableAdapters.CAUTHU_MUAGIAITableAdapter cauthU_MUAGIAITableAdapter1;
     }
 }
