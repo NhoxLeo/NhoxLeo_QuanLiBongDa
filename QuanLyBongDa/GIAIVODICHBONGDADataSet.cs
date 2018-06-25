@@ -6,3 +6,10 @@
     {
     }
 }
+
+namespace QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters {
+    
+    
+    public partial class QUYDINHBANTHANGTableAdapter {
+    }
+}

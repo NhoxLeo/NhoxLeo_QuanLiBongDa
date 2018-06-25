@@ -38,7 +38,7 @@
             this.columnHeader6 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.label_tendoi = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txt_sannha = new System.Windows.Forms.Label();
             this.txt_san = new System.Windows.Forms.TextBox();
             this.link_thongtinsan = new System.Windows.Forms.LinkLabel();
             this.giaivodichbongdaDataSet1 = new QuanLyBongDa.GIAIVODICHBONGDADataSet();
@@ -109,7 +109,7 @@
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
             this.tableLayoutPanel2.Controls.Add(this.label_tendoi, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.label1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.txt_sannha, 1, 0);
             this.tableLayoutPanel2.Controls.Add(this.txt_san, 2, 0);
             this.tableLayoutPanel2.Controls.Add(this.link_thongtinsan, 3, 0);
             this.tableLayoutPanel2.Location = new System.Drawing.Point(240, 0);
@@ -133,17 +133,17 @@
             this.label_tendoi.Text = "Tên Đội";
             this.label_tendoi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // label1
+            // txt_sannha
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(200, 50);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 20);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Sân Nhà:";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.txt_sannha.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txt_sannha.AutoSize = true;
+            this.txt_sannha.Location = new System.Drawing.Point(200, 50);
+            this.txt_sannha.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.txt_sannha.Name = "txt_sannha";
+            this.txt_sannha.Size = new System.Drawing.Size(75, 20);
+            this.txt_sannha.TabIndex = 0;
+            this.txt_sannha.Text = "Sân Nhà:";
+            this.txt_sannha.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // txt_san
             // 
@@ -169,6 +169,7 @@
             this.link_thongtinsan.TabIndex = 1;
             this.link_thongtinsan.TabStop = true;
             this.link_thongtinsan.Text = "Thông tin sân";
+            this.link_thongtinsan.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.link_thongtinsan_LinkClicked);
             // 
             // giaivodichbongdaDataSet1
             // 
@@ -228,7 +229,7 @@
         private System.Windows.Forms.ColumnHeader columnHeader6;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Label label_tendoi;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label txt_sannha;
         private System.Windows.Forms.TextBox txt_san;
         private System.Windows.Forms.LinkLabel link_thongtinsan;
         private GIAIVODICHBONGDADataSet giaivodichbongdaDataSet1;

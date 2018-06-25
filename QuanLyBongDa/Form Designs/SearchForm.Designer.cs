@@ -61,6 +61,14 @@
             this.button_searchct = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.txt_cauthu = new System.Windows.Forms.TextBox();
+            this.giaivodichbongdaDataSet1 = new QuanLyBongDa.GIAIVODICHBONGDADataSet();
+            this.doibonG_MUAGIAITableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.DOIBONG_MUAGIAITableAdapter();
+            this.cauthU_MUAGIAITableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.CAUTHU_MUAGIAITableAdapter();
+            this.muagiaiTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter();
+            this.cauthuTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.CAUTHUTableAdapter();
+            this.sanTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter();
+            this.doibongTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.DOIBONGTableAdapter();
+            this.loaicauthuTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.LOAICAUTHUTableAdapter();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -72,6 +80,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.tableLayoutPanel7.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -105,7 +114,7 @@
             this.tableLayoutPanel2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 291F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 336F));
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1611, 336);
             this.tableLayoutPanel2.TabIndex = 0;
             // 
@@ -165,8 +174,9 @@
             this.button_search.Name = "button_search";
             this.button_search.Size = new System.Drawing.Size(112, 49);
             this.button_search.TabIndex = 4;
-            this.button_search.Text = "Tìm Kiếm";
+            this.button_search.Text = "Tra Cứu";
             this.button_search.UseVisualStyleBackColor = true;
+            this.button_search.Click += new System.EventHandler(this.button_search_Click);
             // 
             // cbox_chondoi
             // 
@@ -177,6 +187,7 @@
             this.cbox_chondoi.Name = "cbox_chondoi";
             this.cbox_chondoi.Size = new System.Drawing.Size(344, 28);
             this.cbox_chondoi.TabIndex = 2;
+            this.cbox_chondoi.SelectedIndexChanged += new System.EventHandler(this.cbox_chondoi_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -203,7 +214,7 @@
             this.tableLayoutPanel6.Name = "tableLayoutPanel6";
             this.tableLayoutPanel6.RowCount = 1;
             this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 51F));
+            this.tableLayoutPanel6.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 64F));
             this.tableLayoutPanel6.Size = new System.Drawing.Size(352, 64);
             this.tableLayoutPanel6.TabIndex = 5;
             // 
@@ -298,7 +309,7 @@
             this.tableLayoutPanel4.Name = "tableLayoutPanel4";
             this.tableLayoutPanel4.RowCount = 1;
             this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 411F));
+            this.tableLayoutPanel4.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 472F));
             this.tableLayoutPanel4.Size = new System.Drawing.Size(1611, 472);
             this.tableLayoutPanel4.TabIndex = 1;
             // 
@@ -411,8 +422,9 @@
             this.button_searchct.Name = "button_searchct";
             this.button_searchct.Size = new System.Drawing.Size(112, 54);
             this.button_searchct.TabIndex = 7;
-            this.button_searchct.Text = "Tìm Kiếm";
+            this.button_searchct.Text = "Tra Cứu";
             this.button_searchct.UseVisualStyleBackColor = true;
+            this.button_searchct.MouseClick += new System.Windows.Forms.MouseEventHandler(this.button_searchct_MouseClick);
             // 
             // label3
             // 
@@ -435,6 +447,40 @@
             this.txt_cauthu.Size = new System.Drawing.Size(355, 26);
             this.txt_cauthu.TabIndex = 6;
             this.txt_cauthu.Text = "Nhập tên cầu thủ cần tìm";
+            this.txt_cauthu.MouseClick += new System.Windows.Forms.MouseEventHandler(this.txt_cauthu_MouseClick);
+            // 
+            // giaivodichbongdaDataSet1
+            // 
+            this.giaivodichbongdaDataSet1.DataSetName = "GIAIVODICHBONGDADataSet";
+            this.giaivodichbongdaDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // doibonG_MUAGIAITableAdapter1
+            // 
+            this.doibonG_MUAGIAITableAdapter1.ClearBeforeFill = true;
+            // 
+            // cauthU_MUAGIAITableAdapter1
+            // 
+            this.cauthU_MUAGIAITableAdapter1.ClearBeforeFill = true;
+            // 
+            // muagiaiTableAdapter1
+            // 
+            this.muagiaiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // cauthuTableAdapter1
+            // 
+            this.cauthuTableAdapter1.ClearBeforeFill = true;
+            // 
+            // sanTableAdapter1
+            // 
+            this.sanTableAdapter1.ClearBeforeFill = true;
+            // 
+            // doibongTableAdapter1
+            // 
+            this.doibongTableAdapter1.ClearBeforeFill = true;
+            // 
+            // loaicauthuTableAdapter1
+            // 
+            this.loaicauthuTableAdapter1.ClearBeforeFill = true;
             // 
             // SearchForm
             // 
@@ -458,6 +504,7 @@
             this.groupBox4.ResumeLayout(false);
             this.tableLayoutPanel7.ResumeLayout(false);
             this.tableLayoutPanel7.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -497,5 +544,13 @@
         private System.Windows.Forms.Button button_searchct;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txt_cauthu;
+        private GIAIVODICHBONGDADataSet giaivodichbongdaDataSet1;
+        private GIAIVODICHBONGDADataSetTableAdapters.DOIBONG_MUAGIAITableAdapter doibonG_MUAGIAITableAdapter1;
+        private GIAIVODICHBONGDADataSetTableAdapters.CAUTHU_MUAGIAITableAdapter cauthU_MUAGIAITableAdapter1;
+        private GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter muagiaiTableAdapter1;
+        private GIAIVODICHBONGDADataSetTableAdapters.CAUTHUTableAdapter cauthuTableAdapter1;
+        private GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter sanTableAdapter1;
+        private GIAIVODICHBONGDADataSetTableAdapters.DOIBONGTableAdapter doibongTableAdapter1;
+        private GIAIVODICHBONGDADataSetTableAdapters.LOAICAUTHUTableAdapter loaicauthuTableAdapter1;
     }
 }

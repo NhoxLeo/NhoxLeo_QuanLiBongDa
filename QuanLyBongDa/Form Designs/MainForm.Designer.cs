@@ -41,8 +41,6 @@
             this.button_ScorerRecord = new System.Windows.Forms.ToolStripMenuItem();
             this.button_BrowseResult = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_Report = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_leagueTable = new System.Windows.Forms.ToolStripMenuItem();
-            this.button_ScorerList = new System.Windows.Forms.ToolStripMenuItem();
             this.button_Search = new System.Windows.Forms.ToolStripMenuItem();
             this.menu_Regulation = new System.Windows.Forms.ToolStripMenuItem();
             this.button_PlayerRegulation = new System.Windows.Forms.ToolStripMenuItem();
@@ -153,32 +151,16 @@
             // menu_Report
             // 
             this.menu_Report.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.button_leagueTable,
-            this.button_ScorerList,
             this.button_Search});
             this.menu_Report.Name = "menu_Report";
             this.menu_Report.Size = new System.Drawing.Size(160, 29);
             this.menu_Report.Text = "Tra cứu - Báo cáo";
             // 
-            // button_leagueTable
-            // 
-            this.button_leagueTable.Name = "button_leagueTable";
-            this.button_leagueTable.Size = new System.Drawing.Size(306, 30);
-            this.button_leagueTable.Text = "Bảng xếp hạng";
-            this.button_leagueTable.Click += new System.EventHandler(this.button_leagueTable_Click);
-            // 
-            // button_ScorerList
-            // 
-            this.button_ScorerList.Name = "button_ScorerList";
-            this.button_ScorerList.Size = new System.Drawing.Size(306, 30);
-            this.button_ScorerList.Text = "Danh sách cầu thủ ghi bàn";
-            this.button_ScorerList.Click += new System.EventHandler(this.button_ScorerList_Click);
-            // 
             // button_Search
             // 
             this.button_Search.Name = "button_Search";
-            this.button_Search.Size = new System.Drawing.Size(306, 30);
-            this.button_Search.Text = "Tìm kiếm";
+            this.button_Search.Size = new System.Drawing.Size(252, 30);
+            this.button_Search.Text = "Tra Cứu";
             this.button_Search.Click += new System.EventHandler(this.button_Search_Click);
             // 
             // menu_Regulation
@@ -236,8 +218,6 @@
         private System.Windows.Forms.ToolStripMenuItem button_ResultReport;
         private System.Windows.Forms.ToolStripMenuItem button_ScorerRecord;
         private System.Windows.Forms.ToolStripMenuItem button_BrowseResult;
-        private System.Windows.Forms.ToolStripMenuItem button_leagueTable;
-        private System.Windows.Forms.ToolStripMenuItem button_ScorerList;
         private System.Windows.Forms.ToolStripMenuItem button_Search;
         private System.Windows.Forms.ToolStripMenuItem button_PlayerRegulation;
         private System.Windows.Forms.ToolStripMenuItem button_GoalRegulation;

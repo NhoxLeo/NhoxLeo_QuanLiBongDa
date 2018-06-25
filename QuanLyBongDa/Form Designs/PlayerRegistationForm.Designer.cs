@@ -39,13 +39,12 @@
             this.playerNameTextBox = new System.Windows.Forms.TextBox();
             this.playerLabel = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.chooseClubButton = new System.Windows.Forms.Button();
+            this.nationalityTexBox = new System.Windows.Forms.TextBox();
+            this.label6 = new System.Windows.Forms.Label();
+            this.clubComboBox = new System.Windows.Forms.ComboBox();
             this.seasonComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.title = new System.Windows.Forms.Label();
-            this.addPlayerButton = new System.Windows.Forms.Button();
             this.giaivodichbongdaDataSet1 = new QuanLyBongDa.GIAIVODICHBONGDADataSet();
             this.cauthU_MUAGIAITableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.CAUTHU_MUAGIAITableAdapter();
             this.loaicauthuTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.LOAICAUTHUTableAdapter();
@@ -53,9 +52,14 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.doibongTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.DOIBONGTableAdapter();
             this.muagiaiTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter();
-            this.clubComboBox = new System.Windows.Forms.ComboBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.nationalityTexBox = new System.Windows.Forms.TextBox();
+            this.txt_madoi = new System.Windows.Forms.TextBox();
+            this.button_them = new System.Windows.Forms.Button();
+            this.button_sua = new System.Windows.Forms.Button();
+            this.button_xoa = new System.Windows.Forms.Button();
+            this.button_ok = new System.Windows.Forms.Button();
+            this.txt_macauthu = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.btn_huy = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).BeginInit();
@@ -73,7 +77,7 @@
             this.panel1.Controls.Add(this.playerName);
             this.panel1.Controls.Add(this.playerNameTextBox);
             this.panel1.Controls.Add(this.playerLabel);
-            this.panel1.Location = new System.Drawing.Point(145, 12);
+            this.panel1.Location = new System.Drawing.Point(27, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(414, 208);
             this.panel1.TabIndex = 0;
@@ -99,6 +103,7 @@
             this.playerType.Name = "playerType";
             this.playerType.Size = new System.Drawing.Size(266, 28);
             this.playerType.TabIndex = 6;
+            this.playerType.SelectedIndexChanged += new System.EventHandler(this.playerType_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -154,28 +159,42 @@
             // 
             // panel2
             // 
+            this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.nationalityTexBox);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.clubComboBox);
-            this.panel2.Controls.Add(this.chooseClubButton);
             this.panel2.Controls.Add(this.seasonComboBox);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Controls.Add(this.label4);
-            this.panel2.Location = new System.Drawing.Point(565, 9);
+            this.panel2.Controls.Add(this.title);
+            this.panel2.Location = new System.Drawing.Point(539, 12);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(414, 208);
             this.panel2.TabIndex = 9;
             // 
-            // chooseClubButton
+            // nationalityTexBox
             // 
-            this.chooseClubButton.Location = new System.Drawing.Point(16, 77);
-            this.chooseClubButton.Name = "chooseClubButton";
-            this.chooseClubButton.Size = new System.Drawing.Size(93, 26);
-            this.chooseClubButton.TabIndex = 11;
-            this.chooseClubButton.Text = "Chọn đội";
-            this.chooseClubButton.UseVisualStyleBackColor = true;
-            this.chooseClubButton.Click += new System.EventHandler(this.button1_Click);
+            this.nationalityTexBox.Location = new System.Drawing.Point(140, 30);
+            this.nationalityTexBox.Name = "nationalityTexBox";
+            this.nationalityTexBox.Size = new System.Drawing.Size(264, 26);
+            this.nationalityTexBox.TabIndex = 14;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(17, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(80, 20);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Quốc Tịch";
+            // 
+            // clubComboBox
+            // 
+            this.clubComboBox.FormattingEnabled = true;
+            this.clubComboBox.Location = new System.Drawing.Point(140, 95);
+            this.clubComboBox.Name = "clubComboBox";
+            this.clubComboBox.Size = new System.Drawing.Size(264, 28);
+            this.clubComboBox.TabIndex = 12;
+            this.clubComboBox.SelectedIndexChanged += new System.EventHandler(this.clubComboBox_SelectedIndexChanged);
             // 
             // seasonComboBox
             // 
@@ -194,39 +213,13 @@
             this.label5.TabIndex = 9;
             this.label5.Text = "Mùa giải";
             // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(140, 127);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(266, 26);
-            this.textBox1.TabIndex = 8;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 130);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(69, 20);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Sân nhà";
-            // 
             // title
             // 
-            this.title.Location = new System.Drawing.Point(-1, 12);
+            this.title.Location = new System.Drawing.Point(149, -2);
             this.title.Name = "title";
-            this.title.Size = new System.Drawing.Size(140, 65);
+            this.title.Size = new System.Drawing.Size(117, 29);
             this.title.TabIndex = 10;
             this.title.Text = "Hồ sơ đội bóng";
-            // 
-            // addPlayerButton
-            // 
-            this.addPlayerButton.Location = new System.Drawing.Point(3, 139);
-            this.addPlayerButton.Name = "addPlayerButton";
-            this.addPlayerButton.Size = new System.Drawing.Size(136, 81);
-            this.addPlayerButton.TabIndex = 11;
-            this.addPlayerButton.Text = "Thêm cầu thủ";
-            this.addPlayerButton.UseVisualStyleBackColor = true;
-            this.addPlayerButton.Click += new System.EventHandler(this.addPlayerButton_Click);
             // 
             // giaivodichbongdaDataSet1
             // 
@@ -248,7 +241,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 226);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 326);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 28;
             this.dataGridView1.Size = new System.Drawing.Size(976, 220);
@@ -262,38 +255,100 @@
             // 
             this.muagiaiTableAdapter1.ClearBeforeFill = true;
             // 
-            // clubComboBox
+            // txt_madoi
             // 
-            this.clubComboBox.FormattingEnabled = true;
-            this.clubComboBox.Location = new System.Drawing.Point(140, 77);
-            this.clubComboBox.Name = "clubComboBox";
-            this.clubComboBox.Size = new System.Drawing.Size(264, 28);
-            this.clubComboBox.TabIndex = 12;
+            this.txt_madoi.Location = new System.Drawing.Point(3, 294);
+            this.txt_madoi.Name = "txt_madoi";
+            this.txt_madoi.Size = new System.Drawing.Size(10, 26);
+            this.txt_madoi.TabIndex = 14;
             // 
-            // label6
+            // button_them
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(17, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 20);
-            this.label6.TabIndex = 13;
-            this.label6.Text = "Quốc Tịch";
+            this.button_them.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_them.Location = new System.Drawing.Point(27, 248);
+            this.button_them.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_them.Name = "button_them";
+            this.button_them.Size = new System.Drawing.Size(112, 54);
+            this.button_them.TabIndex = 15;
+            this.button_them.Text = "Thêm";
+            this.button_them.UseVisualStyleBackColor = true;
+            this.button_them.Click += new System.EventHandler(this.button_them_Click);
             // 
-            // nationalityTexBox
+            // button_sua
             // 
-            this.nationalityTexBox.Location = new System.Drawing.Point(140, 30);
-            this.nationalityTexBox.Name = "nationalityTexBox";
-            this.nationalityTexBox.Size = new System.Drawing.Size(264, 26);
-            this.nationalityTexBox.TabIndex = 14;
+            this.button_sua.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_sua.Location = new System.Drawing.Point(230, 248);
+            this.button_sua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_sua.Name = "button_sua";
+            this.button_sua.Size = new System.Drawing.Size(112, 54);
+            this.button_sua.TabIndex = 16;
+            this.button_sua.Text = "Sửa";
+            this.button_sua.UseVisualStyleBackColor = true;
+            this.button_sua.Click += new System.EventHandler(this.button_sua_Click);
+            // 
+            // button_xoa
+            // 
+            this.button_xoa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_xoa.Location = new System.Drawing.Point(430, 248);
+            this.button_xoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_xoa.Name = "button_xoa";
+            this.button_xoa.Size = new System.Drawing.Size(112, 54);
+            this.button_xoa.TabIndex = 17;
+            this.button_xoa.Text = "Xóa";
+            this.button_xoa.UseVisualStyleBackColor = true;
+            this.button_xoa.Click += new System.EventHandler(this.button_xoa_Click);
+            // 
+            // button_ok
+            // 
+            this.button_ok.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_ok.Location = new System.Drawing.Point(841, 248);
+            this.button_ok.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_ok.Name = "button_ok";
+            this.button_ok.Size = new System.Drawing.Size(112, 54);
+            this.button_ok.TabIndex = 18;
+            this.button_ok.Text = "Xác Nhận";
+            this.button_ok.UseVisualStyleBackColor = true;
+            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
+            // 
+            // txt_macauthu
+            // 
+            this.txt_macauthu.Location = new System.Drawing.Point(969, 294);
+            this.txt_macauthu.Name = "txt_macauthu";
+            this.txt_macauthu.Size = new System.Drawing.Size(10, 26);
+            this.txt_macauthu.TabIndex = 19;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(16, 100);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(72, 20);
+            this.label7.TabIndex = 15;
+            this.label7.Text = "Chọn đội";
+            // 
+            // btn_huy
+            // 
+            this.btn_huy.Location = new System.Drawing.Point(631, 248);
+            this.btn_huy.Name = "btn_huy";
+            this.btn_huy.Size = new System.Drawing.Size(112, 54);
+            this.btn_huy.TabIndex = 20;
+            this.btn_huy.Text = "hủy";
+            this.btn_huy.UseVisualStyleBackColor = true;
+            this.btn_huy.Click += new System.EventHandler(this.btn_huy_Click);
             // 
             // PlayerRegistationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 450);
+            this.ClientSize = new System.Drawing.Size(981, 546);
+            this.Controls.Add(this.btn_huy);
+            this.Controls.Add(this.txt_macauthu);
+            this.Controls.Add(this.button_them);
+            this.Controls.Add(this.button_sua);
+            this.Controls.Add(this.button_xoa);
+            this.Controls.Add(this.button_ok);
+            this.Controls.Add(this.txt_madoi);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.addPlayerButton);
-            this.Controls.Add(this.title);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Name = "PlayerRegistationForm";
@@ -305,6 +360,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -321,13 +377,9 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.ComboBox playerType;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label title;
-        private System.Windows.Forms.Button addPlayerButton;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.ComboBox seasonComboBox;
-        private System.Windows.Forms.Button chooseClubButton;
         private GIAIVODICHBONGDADataSet giaivodichbongdaDataSet1;
         private GIAIVODICHBONGDADataSetTableAdapters.CAUTHU_MUAGIAITableAdapter cauthU_MUAGIAITableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.LOAICAUTHUTableAdapter loaicauthuTableAdapter1;
@@ -338,5 +390,13 @@
         private GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter muagiaiTableAdapter1;
         private System.Windows.Forms.TextBox nationalityTexBox;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txt_madoi;
+        private System.Windows.Forms.Button button_them;
+        private System.Windows.Forms.Button button_sua;
+        private System.Windows.Forms.Button button_xoa;
+        private System.Windows.Forms.Button button_ok;
+        private System.Windows.Forms.TextBox txt_macauthu;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btn_huy;
     }
 }

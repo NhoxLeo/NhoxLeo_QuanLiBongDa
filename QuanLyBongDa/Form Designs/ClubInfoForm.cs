@@ -56,7 +56,7 @@ namespace QuanLyBongDa.Form_Designs
             {
                 listviewPlayer.Items.Clear();
                 label_tendoi.Text = e.Node.Text;
-                this.doibonG_MUAGIAITableAdapter1.FillByMaDoiMaMua(this.giaivodichbongdaDataSet1.DOIBONG_MUAGIAI, e.Node.Tag.ToString(), e.Node.Parent.Tag.ToString());
+                this.doibonG_MUAGIAITableAdapter1.FillByMaDoiMaMua(this.giaivodichbongdaDataSet1.DOIBONG_MUAGIAI, e.Node.Parent.Tag.ToString(), e.Node.Tag.ToString());
                 foreach (DataRow row in this.giaivodichbongdaDataSet1.DOIBONG_MUAGIAI.Rows)
                 {
                     masan = row["MaSan"].ToString();
@@ -67,13 +67,11 @@ namespace QuanLyBongDa.Form_Designs
                     txt_san.Text = r["TenSan"].ToString();
                 }
                 List<string> listmacauthu = new List<string>();
-
                 this.cauthU_MUAGIAITableAdapter1.FillBy_Madoi_Mamua(this.giaivodichbongdaDataSet1.CAUTHU_MUAGIAI, e.Node.Tag.ToString(), e.Node.Parent.Tag.ToString());
                 foreach (DataRow row in this.giaivodichbongdaDataSet1.CAUTHU_MUAGIAI.Rows)
                 {
                     listmacauthu.Add(row["MaCauThu"].ToString());
                 }
-
                 int i = 0;
                 if (listmacauthu.Count != 0)
                 {
@@ -83,7 +81,6 @@ namespace QuanLyBongDa.Form_Designs
                         listviewPlayer.Items.Add(item);
                     }
                 }
-
             }
             else if (e.Node.Name == "cauthu")
             {
@@ -115,13 +112,13 @@ namespace QuanLyBongDa.Form_Designs
                 }
             }
         }
-        //private void link_thongtinsan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        //    {
-        //        if (masan != "")
-        //        {
-        //            FrmThongTinSan frm = new FrmThongTinSan();
-        //            frm.ShowDialog();
-        //        }
-        //    }
+        private void link_thongtinsan_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            //if (masan != "")
+            //{
+            //    FrmThongTinSan frm = new FrmThongTinSan();
+            //    frm.ShowDialog();
+            //}
+        }
     }
 }

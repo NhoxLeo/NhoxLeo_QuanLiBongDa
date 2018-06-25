@@ -28,50 +28,71 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.tableLayoutPanel3 = new System.Windows.Forms.TableLayoutPanel();
             this.button_them = new System.Windows.Forms.Button();
             this.button_sua = new System.Windows.Forms.Button();
             this.button_xoa = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
             this.button_huy = new System.Windows.Forms.Button();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.stadiumComboBox = new System.Windows.Forms.ComboBox();
+            this.team2 = new System.Windows.Forms.ComboBox();
+            this.team1 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.seasonComboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.refereeComboBox = new System.Windows.Forms.ComboBox();
             this.giaivodichbongdaDataSet1 = new QuanLyBongDa.GIAIVODICHBONGDADataSet();
             this.muagiaiTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter();
             this.doibonG_MUAGIAITableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.DOIBONG_MUAGIAITableAdapter();
             this.doibongTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.DOIBONGTableAdapter();
-            this.trandauTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.TRANDAUTableAdapter();
             this.sanTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter();
+            this.trandauTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.TRANDAUTableAdapter();
+            this.tRANDAUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.trongtaiTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.TRONGTAITableAdapter();
+            this.luotTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.LUOTTableAdapter();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tableLayoutPanel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRANDAUBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.refereeComboBox);
+            this.panel1.Controls.Add(this.dateTimePicker1);
             this.panel1.Controls.Add(this.dataGridView1);
             this.panel1.Controls.Add(this.tableLayoutPanel3);
-            this.panel1.Controls.Add(this.comboBox5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.comboBox4);
-            this.panel1.Controls.Add(this.comboBox3);
-            this.panel1.Controls.Add(this.dateTimePicker1);
+            this.panel1.Controls.Add(this.stadiumComboBox);
+            this.panel1.Controls.Add(this.team2);
+            this.panel1.Controls.Add(this.team1);
             this.panel1.Controls.Add(this.comboBox2);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.seasonComboBox);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(2, 3);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 446);
             this.panel1.TabIndex = 0;
+            // 
+            // dateTimePicker1
+            // 
+            this.dateTimePicker1.Location = new System.Drawing.Point(582, 41);
+            this.dateTimePicker1.Name = "dateTimePicker1";
+            this.dateTimePicker1.Size = new System.Drawing.Size(209, 26);
+            this.dateTimePicker1.TabIndex = 10;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(3, 229);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 28;
+            this.dataGridView1.Size = new System.Drawing.Size(791, 220);
+            this.dataGridView1.TabIndex = 9;
             // 
             // tableLayoutPanel3
             // 
@@ -87,7 +108,7 @@
             this.tableLayoutPanel3.Controls.Add(this.button_xoa, 2, 0);
             this.tableLayoutPanel3.Controls.Add(this.button_ok, 3, 0);
             this.tableLayoutPanel3.Controls.Add(this.button_huy, 4, 0);
-            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 116);
+            this.tableLayoutPanel3.Location = new System.Drawing.Point(4, 149);
             this.tableLayoutPanel3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.tableLayoutPanel3.Name = "tableLayoutPanel3";
             this.tableLayoutPanel3.RowCount = 1;
@@ -105,6 +126,7 @@
             this.button_them.TabIndex = 0;
             this.button_them.Text = "Thêm";
             this.button_them.UseVisualStyleBackColor = true;
+            this.button_them.Click += new System.EventHandler(this.button_them_Click);
             // 
             // button_sua
             // 
@@ -138,6 +160,7 @@
             this.button_ok.TabIndex = 3;
             this.button_ok.Text = "Xác Nhận";
             this.button_ok.UseVisualStyleBackColor = true;
+            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
             // 
             // button_huy
             // 
@@ -150,83 +173,108 @@
             this.button_huy.Text = "Hủy";
             this.button_huy.UseVisualStyleBackColor = true;
             // 
-            // comboBox5
+            // stadiumComboBox
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Location = new System.Drawing.Point(481, 43);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(305, 28);
-            this.comboBox5.TabIndex = 7;
+            this.stadiumComboBox.FormattingEnabled = true;
+            this.stadiumComboBox.Location = new System.Drawing.Point(582, 73);
+            this.stadiumComboBox.Name = "stadiumComboBox";
+            this.stadiumComboBox.Size = new System.Drawing.Size(209, 28);
+            this.stadiumComboBox.TabIndex = 7;
+            this.stadiumComboBox.Text = "Sân";
             // 
-            // label2
+            // team2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(375, 46);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(42, 20);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Sân:";
+            this.team2.FormattingEnabled = true;
+            this.team2.Location = new System.Drawing.Point(10, 111);
+            this.team2.Name = "team2";
+            this.team2.Size = new System.Drawing.Size(221, 28);
+            this.team2.TabIndex = 5;
+            this.team2.Text = "Đội 2";
             // 
-            // comboBox4
+            // team1
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(481, 80);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(305, 28);
-            this.comboBox4.TabIndex = 5;
-            this.comboBox4.Text = "Đội 2";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(10, 80);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(249, 28);
-            this.comboBox3.TabIndex = 4;
-            this.comboBox3.Text = "Đội 1";
-            // 
-            // dateTimePicker1
-            // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(481, 11);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(305, 26);
-            this.dateTimePicker1.TabIndex = 3;
+            this.team1.FormattingEnabled = true;
+            this.team1.Location = new System.Drawing.Point(10, 77);
+            this.team1.Name = "team1";
+            this.team1.Size = new System.Drawing.Size(221, 28);
+            this.team1.TabIndex = 4;
+            this.team1.Text = "Đội 1";
             // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(10, 46);
+            this.comboBox2.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11",
+            "12",
+            "13",
+            "14",
+            "15",
+            "16",
+            "17",
+            "18",
+            "19",
+            "20",
+            "21",
+            "22",
+            "23",
+            "24",
+            "25",
+            "26",
+            "27",
+            "28",
+            "29",
+            "30",
+            "31",
+            "32",
+            "33",
+            "34",
+            "35",
+            "36",
+            "37",
+            "38"});
+            this.comboBox2.Location = new System.Drawing.Point(10, 43);
             this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(249, 28);
+            this.comboBox2.Size = new System.Drawing.Size(221, 28);
             this.comboBox2.TabIndex = 2;
             this.comboBox2.Text = "Vòng đấu";
             // 
-            // comboBox1
+            // seasonComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(10, 9);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(249, 28);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "Mùa giải";
+            this.seasonComboBox.FormattingEnabled = true;
+            this.seasonComboBox.Location = new System.Drawing.Point(10, 9);
+            this.seasonComboBox.Name = "seasonComboBox";
+            this.seasonComboBox.Size = new System.Drawing.Size(221, 28);
+            this.seasonComboBox.TabIndex = 1;
+            this.seasonComboBox.Text = "Mùa giải";
+            this.seasonComboBox.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(375, 12);
+            this.label1.Location = new System.Drawing.Point(578, 17);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 20);
             this.label1.TabIndex = 0;
             this.label1.Text = "Thời gian:";
             // 
-            // dataGridView1
+            // refereeComboBox
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 196);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 28;
-            this.dataGridView1.Size = new System.Drawing.Size(791, 253);
-            this.dataGridView1.TabIndex = 9;
+            this.refereeComboBox.FormattingEnabled = true;
+            this.refereeComboBox.Location = new System.Drawing.Point(582, 108);
+            this.refereeComboBox.Name = "refereeComboBox";
+            this.refereeComboBox.Size = new System.Drawing.Size(209, 28);
+            this.refereeComboBox.TabIndex = 11;
+            this.refereeComboBox.Text = "Trọng tài";
             // 
             // giaivodichbongdaDataSet1
             // 
@@ -245,13 +293,26 @@
             // 
             this.doibongTableAdapter1.ClearBeforeFill = true;
             // 
+            // sanTableAdapter1
+            // 
+            this.sanTableAdapter1.ClearBeforeFill = true;
+            // 
             // trandauTableAdapter1
             // 
             this.trandauTableAdapter1.ClearBeforeFill = true;
             // 
-            // sanTableAdapter1
+            // tRANDAUBindingSource
             // 
-            this.sanTableAdapter1.ClearBeforeFill = true;
+            this.tRANDAUBindingSource.DataMember = "TRANDAU";
+            this.tRANDAUBindingSource.DataSource = this.giaivodichbongdaDataSet1;
+            // 
+            // trongtaiTableAdapter1
+            // 
+            this.trongtaiTableAdapter1.ClearBeforeFill = true;
+            // 
+            // luotTableAdapter1
+            // 
+            this.luotTableAdapter1.ClearBeforeFill = true;
             // 
             // ScheduleManagerForm
             // 
@@ -263,9 +324,10 @@
             this.Text = "Lập lịch thi đấu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tableLayoutPanel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tRANDAUBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -273,14 +335,12 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox seasonComboBox;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.ComboBox comboBox5;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox team2;
+        private System.Windows.Forms.ComboBox team1;
+        private System.Windows.Forms.ComboBox stadiumComboBox;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel3;
         private System.Windows.Forms.Button button_them;
         private System.Windows.Forms.Button button_sua;
@@ -292,7 +352,12 @@
         private GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter muagiaiTableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.DOIBONG_MUAGIAITableAdapter doibonG_MUAGIAITableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.DOIBONGTableAdapter doibongTableAdapter1;
-        private GIAIVODICHBONGDADataSetTableAdapters.TRANDAUTableAdapter trandauTableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter sanTableAdapter1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private GIAIVODICHBONGDADataSetTableAdapters.TRANDAUTableAdapter trandauTableAdapter1;
+        private System.Windows.Forms.BindingSource tRANDAUBindingSource;
+        private GIAIVODICHBONGDADataSetTableAdapters.TRONGTAITableAdapter trongtaiTableAdapter1;
+        private System.Windows.Forms.ComboBox refereeComboBox;
+        private GIAIVODICHBONGDADataSetTableAdapters.LUOTTableAdapter luotTableAdapter1;
     }
 }

@@ -40,15 +40,20 @@
             this.addressLabel = new System.Windows.Forms.Label();
             this.addressTextBox = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.addClubButton = new System.Windows.Forms.Button();
+            this.button_them = new System.Windows.Forms.Button();
             this.title = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.button_ok = new System.Windows.Forms.Button();
             this.doibonG_MUAGIAITableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.DOIBONG_MUAGIAITableAdapter();
             this.giaivodichbongdaDataSet1 = new QuanLyBongDa.GIAIVODICHBONGDADataSet();
             this.doibongTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.DOIBONGTableAdapter();
             this.sanTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter();
             this.muagiaiTableAdapter1 = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter();
+            this.button_sua = new System.Windows.Forms.Button();
+            this.button_xoa = new System.Windows.Forms.Button();
+            this.txt_madoi = new System.Windows.Forms.TextBox();
+            this.txt_masan = new System.Windows.Forms.TextBox();
+            this.button_huy = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.giaivodichbongdaDataSet1)).BeginInit();
@@ -164,15 +169,15 @@
             this.panel2.Size = new System.Drawing.Size(443, 214);
             this.panel2.TabIndex = 13;
             // 
-            // addClubButton
+            // button_them
             // 
-            this.addClubButton.Location = new System.Drawing.Point(16, 40);
-            this.addClubButton.Name = "addClubButton";
-            this.addClubButton.Size = new System.Drawing.Size(124, 69);
-            this.addClubButton.TabIndex = 15;
-            this.addClubButton.Text = "Thêm đội bóng";
-            this.addClubButton.UseVisualStyleBackColor = true;
-            this.addClubButton.Click += new System.EventHandler(this.addClubButton_Click);
+            this.button_them.Location = new System.Drawing.Point(16, 40);
+            this.button_them.Name = "button_them";
+            this.button_them.Size = new System.Drawing.Size(112, 56);
+            this.button_them.TabIndex = 15;
+            this.button_them.Text = "Thêm";
+            this.button_them.UseVisualStyleBackColor = true;
+            this.button_them.Click += new System.EventHandler(this.addClubButton_Click);
             // 
             // title
             // 
@@ -193,15 +198,15 @@
             this.dataGridView1.Size = new System.Drawing.Size(798, 218);
             this.dataGridView1.TabIndex = 16;
             // 
-            // button1
+            // button_ok
             // 
-            this.button1.Location = new System.Drawing.Point(146, 40);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(124, 68);
-            this.button1.TabIndex = 17;
-            this.button1.Text = "confirmButton";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button_ok.Location = new System.Drawing.Point(157, 40);
+            this.button_ok.Name = "button_ok";
+            this.button_ok.Size = new System.Drawing.Size(113, 56);
+            this.button_ok.TabIndex = 17;
+            this.button_ok.Text = "Xác nhận";
+            this.button_ok.UseVisualStyleBackColor = true;
+            this.button_ok.Click += new System.EventHandler(this.button1_Click);
             // 
             // doibonG_MUAGIAITableAdapter1
             // 
@@ -224,18 +229,72 @@
             // 
             this.muagiaiTableAdapter1.ClearBeforeFill = true;
             // 
+            // button_sua
+            // 
+            this.button_sua.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_sua.Location = new System.Drawing.Point(157, 155);
+            this.button_sua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_sua.Name = "button_sua";
+            this.button_sua.Size = new System.Drawing.Size(113, 52);
+            this.button_sua.TabIndex = 18;
+            this.button_sua.Text = "Sửa";
+            this.button_sua.UseVisualStyleBackColor = true;
+            this.button_sua.Click += new System.EventHandler(this.button_sua_Click);
+            // 
+            // button_xoa
+            // 
+            this.button_xoa.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.button_xoa.Location = new System.Drawing.Point(16, 155);
+            this.button_xoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.button_xoa.Name = "button_xoa";
+            this.button_xoa.Size = new System.Drawing.Size(112, 52);
+            this.button_xoa.TabIndex = 19;
+            this.button_xoa.Text = "Xóa";
+            this.button_xoa.UseVisualStyleBackColor = true;
+            this.button_xoa.Click += new System.EventHandler(this.button_xoa_Click);
+            // 
+            // txt_madoi
+            // 
+            this.txt_madoi.Location = new System.Drawing.Point(0, 215);
+            this.txt_madoi.Name = "txt_madoi";
+            this.txt_madoi.Size = new System.Drawing.Size(10, 26);
+            this.txt_madoi.TabIndex = 20;
+            // 
+            // txt_masan
+            // 
+            this.txt_masan.Location = new System.Drawing.Point(0, 215);
+            this.txt_masan.Name = "txt_masan";
+            this.txt_masan.Size = new System.Drawing.Size(10, 26);
+            this.txt_masan.TabIndex = 21;
+            // 
+            // button_huy
+            // 
+            this.button_huy.Location = new System.Drawing.Point(89, 103);
+            this.button_huy.Name = "button_huy";
+            this.button_huy.Size = new System.Drawing.Size(100, 44);
+            this.button_huy.TabIndex = 22;
+            this.button_huy.Text = "huy";
+            this.button_huy.UseVisualStyleBackColor = true;
+            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
+            // 
             // ClubRegistationForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.button_huy);
+            this.Controls.Add(this.txt_masan);
+            this.Controls.Add(this.txt_madoi);
+            this.Controls.Add(this.button_sua);
+            this.Controls.Add(this.button_xoa);
+            this.Controls.Add(this.button_ok);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.addClubButton);
+            this.Controls.Add(this.button_them);
             this.Controls.Add(this.title);
             this.Controls.Add(this.panel2);
             this.Name = "ClubRegistationForm";
             this.Text = "Đăng kí đội bóng";
+            this.Load += new System.EventHandler(this.ClubRegistationForm_Load);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -259,7 +318,7 @@
         private System.Windows.Forms.Label addressLabel;
         private System.Windows.Forms.TextBox addressTextBox;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button addClubButton;
+        private System.Windows.Forms.Button button_them;
         private System.Windows.Forms.Label title;
         private System.Windows.Forms.DataGridView dataGridView1;
         private GIAIVODICHBONGDADataSetTableAdapters.DOIBONG_MUAGIAITableAdapter doibonG_MUAGIAITableAdapter1;
@@ -267,6 +326,11 @@
         private GIAIVODICHBONGDADataSetTableAdapters.DOIBONGTableAdapter doibongTableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.SANTableAdapter sanTableAdapter1;
         private GIAIVODICHBONGDADataSetTableAdapters.MUAGIAITableAdapter muagiaiTableAdapter1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button_ok;
+        private System.Windows.Forms.Button button_sua;
+        private System.Windows.Forms.Button button_xoa;
+        private System.Windows.Forms.TextBox txt_madoi;
+        private System.Windows.Forms.TextBox txt_masan;
+        private System.Windows.Forms.Button button_huy;
     }
 }

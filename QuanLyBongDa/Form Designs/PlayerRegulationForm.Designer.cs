@@ -28,7 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txt_maloai = new System.Windows.Forms.TextBox();
+            this.txt_maqd = new System.Windows.Forms.TextBox();
             this.txt_tuoitoithieu = new System.Windows.Forms.TextBox();
             this.txt_tuoitoida = new System.Windows.Forms.TextBox();
             this.txt_socauthutoithieu = new System.Windows.Forms.TextBox();
@@ -40,11 +43,18 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.dataGridView_quydinh = new System.Windows.Forms.DataGridView();
             this.button_quydinhchung = new System.Windows.Forms.Button();
+            this.dataGridView_quydinh = new System.Windows.Forms.DataGridView();
+            this.maQuyDinhDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tuoiToiThieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tuoiToiDaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soCauThuToiThieuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soCauThuToiDaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.qUYDINHCAUTHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.gIAIVODICHBONGDADataSet = new QuanLyBongDa.GIAIVODICHBONGDADataSet();
             this.panel3 = new System.Windows.Forms.Panel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView_loaict = new System.Windows.Forms.DataGridView();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_loaicauthu = new System.Windows.Forms.TextBox();
             this.button_sua = new System.Windows.Forms.Button();
@@ -52,16 +62,27 @@
             this.button_xoa = new System.Windows.Forms.Button();
             this.button_huy = new System.Windows.Forms.Button();
             this.button_ok = new System.Windows.Forms.Button();
+            this.dataGridView_loaict = new System.Windows.Forms.DataGridView();
+            this.maLoaiCauThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tenLoaiCauThuDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lOAICAUTHUBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.lOAICAUTHUTableAdapter = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.LOAICAUTHUTableAdapter();
+            this.qUYDINHCAUTHUTableAdapter = new QuanLyBongDa.GIAIVODICHBONGDADataSetTableAdapters.QUYDINHCAUTHUTableAdapter();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_quydinh)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUYDINHCAUTHUBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gIAIVODICHBONGDADataSet)).BeginInit();
             this.panel3.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_loaict)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOAICAUTHUBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.txt_maloai);
+            this.panel1.Controls.Add(this.txt_maqd);
             this.panel1.Controls.Add(this.txt_tuoitoithieu);
             this.panel1.Controls.Add(this.txt_tuoitoida);
             this.panel1.Controls.Add(this.txt_socauthutoithieu);
@@ -77,6 +98,22 @@
             this.panel1.Size = new System.Drawing.Size(727, 436);
             this.panel1.TabIndex = 0;
             // 
+            // txt_maloai
+            // 
+            this.txt_maloai.Location = new System.Drawing.Point(47, 126);
+            this.txt_maloai.Name = "txt_maloai";
+            this.txt_maloai.Size = new System.Drawing.Size(100, 26);
+            this.txt_maloai.TabIndex = 21;
+            this.txt_maloai.Visible = false;
+            // 
+            // txt_maqd
+            // 
+            this.txt_maqd.Location = new System.Drawing.Point(47, 58);
+            this.txt_maqd.Name = "txt_maqd";
+            this.txt_maqd.Size = new System.Drawing.Size(100, 26);
+            this.txt_maqd.TabIndex = 20;
+            this.txt_maqd.Visible = false;
+            // 
             // txt_tuoitoithieu
             // 
             this.txt_tuoitoithieu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -86,6 +123,7 @@
             this.txt_tuoitoithieu.Size = new System.Drawing.Size(376, 26);
             this.txt_tuoitoithieu.TabIndex = 10;
             this.txt_tuoitoithieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tuoitoithieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tuoitoithieu_KeyPress);
             // 
             // txt_tuoitoida
             // 
@@ -96,6 +134,7 @@
             this.txt_tuoitoida.Size = new System.Drawing.Size(376, 26);
             this.txt_tuoitoida.TabIndex = 11;
             this.txt_tuoitoida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_tuoitoida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_tuoitoida_KeyPress);
             // 
             // txt_socauthutoithieu
             // 
@@ -106,6 +145,7 @@
             this.txt_socauthutoithieu.Size = new System.Drawing.Size(376, 26);
             this.txt_socauthutoithieu.TabIndex = 12;
             this.txt_socauthutoithieu.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_socauthutoithieu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_socauthutoithieu_KeyPress);
             // 
             // txt_socauthutoida
             // 
@@ -116,6 +156,7 @@
             this.txt_socauthutoida.Size = new System.Drawing.Size(376, 26);
             this.txt_socauthutoida.TabIndex = 13;
             this.txt_socauthutoida.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_socauthutoida.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_socauthutoida_KeyPress);
             // 
             // txt_cauthunuocngoai
             // 
@@ -126,6 +167,7 @@
             this.txt_cauthunuocngoai.Size = new System.Drawing.Size(376, 26);
             this.txt_cauthunuocngoai.TabIndex = 14;
             this.txt_cauthunuocngoai.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_cauthunuocngoai.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_cauthunuocngoai_KeyPress);
             // 
             // label1
             // 
@@ -191,26 +233,82 @@
             this.panel2.Size = new System.Drawing.Size(727, 299);
             this.panel2.TabIndex = 1;
             // 
-            // dataGridView_quydinh
-            // 
-            this.dataGridView_quydinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_quydinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_quydinh.Location = new System.Drawing.Point(8, 8);
-            this.dataGridView_quydinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView_quydinh.Name = "dataGridView_quydinh";
-            this.dataGridView_quydinh.Size = new System.Drawing.Size(715, 187);
-            this.dataGridView_quydinh.TabIndex = 1;
-            // 
             // button_quydinhchung
             // 
             this.button_quydinhchung.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_quydinhchung.Location = new System.Drawing.Point(314, 211);
+            this.button_quydinhchung.Location = new System.Drawing.Point(305, 193);
             this.button_quydinhchung.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_quydinhchung.Name = "button_quydinhchung";
             this.button_quydinhchung.Size = new System.Drawing.Size(112, 54);
             this.button_quydinhchung.TabIndex = 3;
             this.button_quydinhchung.Text = "Thay Đổi";
             this.button_quydinhchung.UseVisualStyleBackColor = true;
+            this.button_quydinhchung.Click += new System.EventHandler(this.button_quydinhchung_Click);
+            // 
+            // dataGridView_quydinh
+            // 
+            this.dataGridView_quydinh.AutoGenerateColumns = false;
+            this.dataGridView_quydinh.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_quydinh.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_quydinh.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maQuyDinhDataGridViewTextBoxColumn,
+            this.tuoiToiThieuDataGridViewTextBoxColumn,
+            this.tuoiToiDaDataGridViewTextBoxColumn,
+            this.soCauThuToiThieuDataGridViewTextBoxColumn,
+            this.soCauThuToiDaDataGridViewTextBoxColumn,
+            this.soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn});
+            this.dataGridView_quydinh.DataSource = this.qUYDINHCAUTHUBindingSource;
+            this.dataGridView_quydinh.Location = new System.Drawing.Point(8, 8);
+            this.dataGridView_quydinh.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_quydinh.Name = "dataGridView_quydinh";
+            this.dataGridView_quydinh.Size = new System.Drawing.Size(715, 175);
+            this.dataGridView_quydinh.TabIndex = 1;
+            // 
+            // maQuyDinhDataGridViewTextBoxColumn
+            // 
+            this.maQuyDinhDataGridViewTextBoxColumn.DataPropertyName = "MaQuyDinh";
+            this.maQuyDinhDataGridViewTextBoxColumn.HeaderText = "MaQuyDinh";
+            this.maQuyDinhDataGridViewTextBoxColumn.Name = "maQuyDinhDataGridViewTextBoxColumn";
+            // 
+            // tuoiToiThieuDataGridViewTextBoxColumn
+            // 
+            this.tuoiToiThieuDataGridViewTextBoxColumn.DataPropertyName = "TuoiToiThieu";
+            this.tuoiToiThieuDataGridViewTextBoxColumn.HeaderText = "TuoiToiThieu";
+            this.tuoiToiThieuDataGridViewTextBoxColumn.Name = "tuoiToiThieuDataGridViewTextBoxColumn";
+            // 
+            // tuoiToiDaDataGridViewTextBoxColumn
+            // 
+            this.tuoiToiDaDataGridViewTextBoxColumn.DataPropertyName = "TuoiToiDa";
+            this.tuoiToiDaDataGridViewTextBoxColumn.HeaderText = "TuoiToiDa";
+            this.tuoiToiDaDataGridViewTextBoxColumn.Name = "tuoiToiDaDataGridViewTextBoxColumn";
+            // 
+            // soCauThuToiThieuDataGridViewTextBoxColumn
+            // 
+            this.soCauThuToiThieuDataGridViewTextBoxColumn.DataPropertyName = "SoCauThuToiThieu";
+            this.soCauThuToiThieuDataGridViewTextBoxColumn.HeaderText = "SoCauThuToiThieu";
+            this.soCauThuToiThieuDataGridViewTextBoxColumn.Name = "soCauThuToiThieuDataGridViewTextBoxColumn";
+            // 
+            // soCauThuToiDaDataGridViewTextBoxColumn
+            // 
+            this.soCauThuToiDaDataGridViewTextBoxColumn.DataPropertyName = "SoCauThuToiDa";
+            this.soCauThuToiDaDataGridViewTextBoxColumn.HeaderText = "SoCauThuToiDa";
+            this.soCauThuToiDaDataGridViewTextBoxColumn.Name = "soCauThuToiDaDataGridViewTextBoxColumn";
+            // 
+            // soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn
+            // 
+            this.soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn.DataPropertyName = "SoCauThuNuocNgoaiToiDa";
+            this.soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn.HeaderText = "SoCauThuNuocNgoaiToiDa";
+            this.soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn.Name = "soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn";
+            // 
+            // qUYDINHCAUTHUBindingSource
+            // 
+            this.qUYDINHCAUTHUBindingSource.DataMember = "QUYDINHCAUTHU";
+            this.qUYDINHCAUTHUBindingSource.DataSource = this.gIAIVODICHBONGDADataSet;
+            // 
+            // gIAIVODICHBONGDADataSet
+            // 
+            this.gIAIVODICHBONGDADataSet.DataSetName = "GIAIVODICHBONGDADataSet";
+            this.gIAIVODICHBONGDADataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel3
             // 
@@ -240,21 +338,11 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Loại Cầu Thủ";
             // 
-            // dataGridView_loaict
-            // 
-            this.dataGridView_loaict.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView_loaict.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView_loaict.Location = new System.Drawing.Point(4, 24);
-            this.dataGridView_loaict.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.dataGridView_loaict.Name = "dataGridView_loaict";
-            this.dataGridView_loaict.Size = new System.Drawing.Size(665, 318);
-            this.dataGridView_loaict.TabIndex = 0;
-            // 
             // label6
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(116, 422);
+            this.label6.Location = new System.Drawing.Point(60, 425);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(107, 20);
@@ -264,7 +352,7 @@
             // txt_loaicauthu
             // 
             this.txt_loaicauthu.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.txt_loaicauthu.Location = new System.Drawing.Point(246, 419);
+            this.txt_loaicauthu.Location = new System.Drawing.Point(205, 422);
             this.txt_loaicauthu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_loaicauthu.Name = "txt_loaicauthu";
             this.txt_loaicauthu.Size = new System.Drawing.Size(294, 26);
@@ -273,13 +361,14 @@
             // button_sua
             // 
             this.button_sua.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_sua.Location = new System.Drawing.Point(287, 540);
+            this.button_sua.Location = new System.Drawing.Point(230, 540);
             this.button_sua.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_sua.Name = "button_sua";
             this.button_sua.Size = new System.Drawing.Size(112, 54);
             this.button_sua.TabIndex = 12;
             this.button_sua.Text = "Sửa";
             this.button_sua.UseVisualStyleBackColor = true;
+            this.button_sua.Click += new System.EventHandler(this.button_sua_Click);
             // 
             // button_them
             // 
@@ -291,39 +380,84 @@
             this.button_them.TabIndex = 9;
             this.button_them.Text = "Thêm";
             this.button_them.UseVisualStyleBackColor = true;
+            this.button_them.Click += new System.EventHandler(this.button_them_Click);
             // 
             // button_xoa
             // 
             this.button_xoa.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_xoa.Location = new System.Drawing.Point(507, 540);
+            this.button_xoa.Location = new System.Drawing.Point(387, 540);
             this.button_xoa.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_xoa.Name = "button_xoa";
             this.button_xoa.Size = new System.Drawing.Size(112, 54);
             this.button_xoa.TabIndex = 10;
             this.button_xoa.Text = "Xóa";
             this.button_xoa.UseVisualStyleBackColor = true;
+            this.button_xoa.Click += new System.EventHandler(this.button_xoa_Click);
             // 
             // button_huy
             // 
             this.button_huy.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_huy.Location = new System.Drawing.Point(397, 653);
+            this.button_huy.Location = new System.Drawing.Point(320, 635);
             this.button_huy.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_huy.Name = "button_huy";
             this.button_huy.Size = new System.Drawing.Size(112, 54);
             this.button_huy.TabIndex = 13;
             this.button_huy.Text = "Hủy";
             this.button_huy.UseVisualStyleBackColor = true;
+            this.button_huy.Click += new System.EventHandler(this.button_huy_Click);
             // 
             // button_ok
             // 
             this.button_ok.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button_ok.Location = new System.Drawing.Point(176, 653);
+            this.button_ok.Location = new System.Drawing.Point(144, 635);
             this.button_ok.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.button_ok.Name = "button_ok";
             this.button_ok.Size = new System.Drawing.Size(112, 54);
             this.button_ok.TabIndex = 11;
             this.button_ok.Text = "Xác Nhận";
             this.button_ok.UseVisualStyleBackColor = true;
+            this.button_ok.Click += new System.EventHandler(this.button_ok_Click);
+            // 
+            // dataGridView_loaict
+            // 
+            this.dataGridView_loaict.AutoGenerateColumns = false;
+            this.dataGridView_loaict.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView_loaict.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView_loaict.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.maLoaiCauThuDataGridViewTextBoxColumn,
+            this.tenLoaiCauThuDataGridViewTextBoxColumn});
+            this.dataGridView_loaict.DataSource = this.lOAICAUTHUBindingSource;
+            this.dataGridView_loaict.Location = new System.Drawing.Point(4, 24);
+            this.dataGridView_loaict.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView_loaict.Name = "dataGridView_loaict";
+            this.dataGridView_loaict.Size = new System.Drawing.Size(495, 318);
+            this.dataGridView_loaict.TabIndex = 0;
+            // 
+            // maLoaiCauThuDataGridViewTextBoxColumn
+            // 
+            this.maLoaiCauThuDataGridViewTextBoxColumn.DataPropertyName = "MaLoaiCauThu";
+            this.maLoaiCauThuDataGridViewTextBoxColumn.HeaderText = "MaLoaiCauThu";
+            this.maLoaiCauThuDataGridViewTextBoxColumn.Name = "maLoaiCauThuDataGridViewTextBoxColumn";
+            // 
+            // tenLoaiCauThuDataGridViewTextBoxColumn
+            // 
+            this.tenLoaiCauThuDataGridViewTextBoxColumn.DataPropertyName = "TenLoaiCauThu";
+            this.tenLoaiCauThuDataGridViewTextBoxColumn.HeaderText = "TenLoaiCauThu";
+            this.tenLoaiCauThuDataGridViewTextBoxColumn.Name = "tenLoaiCauThuDataGridViewTextBoxColumn";
+            // 
+            // lOAICAUTHUBindingSource
+            // 
+            this.lOAICAUTHUBindingSource.AllowNew = true;
+            this.lOAICAUTHUBindingSource.DataMember = "LOAICAUTHU";
+            this.lOAICAUTHUBindingSource.DataSource = this.gIAIVODICHBONGDADataSet;
+            // 
+            // lOAICAUTHUTableAdapter
+            // 
+            this.lOAICAUTHUTableAdapter.ClearBeforeFill = true;
+            // 
+            // qUYDINHCAUTHUTableAdapter
+            // 
+            this.qUYDINHCAUTHUTableAdapter.ClearBeforeFill = true;
             // 
             // PlayerRegulationForm
             // 
@@ -335,14 +469,18 @@
             this.Controls.Add(this.panel1);
             this.Name = "PlayerRegulationForm";
             this.Text = "Quy định cầu thủ";
+            this.Load += new System.EventHandler(this.PlayerRegulationForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_quydinh)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.qUYDINHCAUTHUBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gIAIVODICHBONGDADataSet)).EndInit();
             this.panel3.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView_loaict)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.lOAICAUTHUBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -373,5 +511,20 @@
         private System.Windows.Forms.Button button_huy;
         private System.Windows.Forms.Button button_ok;
         private System.Windows.Forms.DataGridView dataGridView_loaict;
+        private System.Windows.Forms.BindingSource lOAICAUTHUBindingSource;
+        private GIAIVODICHBONGDADataSet gIAIVODICHBONGDADataSet;
+        private GIAIVODICHBONGDADataSetTableAdapters.LOAICAUTHUTableAdapter lOAICAUTHUTableAdapter;
+        private System.Windows.Forms.BindingSource qUYDINHCAUTHUBindingSource;
+        private GIAIVODICHBONGDADataSetTableAdapters.QUYDINHCAUTHUTableAdapter qUYDINHCAUTHUTableAdapter;
+        private System.Windows.Forms.TextBox txt_maqd;
+        private System.Windows.Forms.TextBox txt_maloai;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maQuyDinhDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tuoiToiThieuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tuoiToiDaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soCauThuToiThieuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soCauThuToiDaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soCauThuNuocNgoaiToiDaDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn maLoaiCauThuDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenLoaiCauThuDataGridViewTextBoxColumn;
     }
 }
