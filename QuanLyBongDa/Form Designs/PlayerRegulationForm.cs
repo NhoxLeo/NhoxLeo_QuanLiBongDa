@@ -69,9 +69,9 @@ namespace QuanLyBongDa.Form_Designs
         }
         private void DataBinding_quydinhchung()
         {
-            //this.lOAICAUTHUTableAdapter.Fill(this.gIAIVODICHBONGDADataSet.LOAICAUTHU);
-            //this.qUYDINHCAUTHUTableAdapter.Fill(this.gIAIVODICHBONGDADataSet.QUYDINHCAUTHU);
-            //dataGridView_quydinh.DataSource = gIAIVODICHBONGDADataSet.QUYDINHCAUTHU;
+            this.lOAICAUTHUTableAdapter.Fill(this.gIAIVODICHBONGDADataSet.LOAICAUTHU);
+            this.qUYDINHCAUTHUTableAdapter.Fill(this.gIAIVODICHBONGDADataSet.QUYDINHCAUTHU);
+            dataGridView_quydinh.DataSource = gIAIVODICHBONGDADataSet.QUYDINHCAUTHU;
             txt_maqd.DataBindings.Clear();
             txt_maqd.DataBindings.Add("Text", dataGridView_quydinh.DataSource, "MaQuyDinh");
             txt_tuoitoithieu.DataBindings.Clear();

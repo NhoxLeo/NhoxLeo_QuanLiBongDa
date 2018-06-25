@@ -100,19 +100,17 @@
             // 
             // txt_maloai
             // 
-            this.txt_maloai.Location = new System.Drawing.Point(47, 126);
+            this.txt_maloai.Location = new System.Drawing.Point(716, 0);
             this.txt_maloai.Name = "txt_maloai";
-            this.txt_maloai.Size = new System.Drawing.Size(100, 26);
+            this.txt_maloai.Size = new System.Drawing.Size(10, 26);
             this.txt_maloai.TabIndex = 21;
-            this.txt_maloai.Visible = false;
             // 
             // txt_maqd
             // 
-            this.txt_maqd.Location = new System.Drawing.Point(47, 58);
+            this.txt_maqd.Location = new System.Drawing.Point(0, 0);
             this.txt_maqd.Name = "txt_maqd";
-            this.txt_maqd.Size = new System.Drawing.Size(100, 26);
+            this.txt_maqd.Size = new System.Drawing.Size(10, 26);
             this.txt_maqd.TabIndex = 20;
-            this.txt_maqd.Visible = false;
             // 
             // txt_tuoitoithieu
             // 

@@ -144,7 +144,7 @@ namespace QuanLyBongDa.Form_Designs
             this.cauthuTableAdapter1.Fill(this.giaivodichbongdaDataSet1.CAUTHU);
             foreach (DataRow row in this.giaivodichbongdaDataSet1.CAUTHU.Rows)
             {
-                if (!Search(row["TENCT"].ToString(), txt_cauthu.Text.Trim()))
+                if (!Search(row["TenCauThu"].ToString(), txt_cauthu.Text.Trim()))
                 {
                     this.giaivodichbongdaDataSet1.CAUTHU.Rows.Remove(row);
                 }
@@ -153,7 +153,7 @@ namespace QuanLyBongDa.Form_Designs
             int i = 0;
             foreach (DataRow row in this.giaivodichbongdaDataSet1.CAUTHU.Rows)
             {
-                string[] info = GetInfoCauThu(row["MACT"].ToString());
+                string[] info = GetInfoCauThu(row["MaCauThu"].ToString());
                 temp[0] = Convert.ToString(++i);
                 temp[1] = info[0];
                 temp[2] = info[1];

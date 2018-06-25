@@ -136,7 +136,7 @@ namespace QuanLyBongDa.Form_Designs
                     txt_doi2.Text = LayTenDoi(dataRow["MaDoi2"].ToString());
                     txt_san.Text = LayTenSan(dataRow["MaSan"].ToString());
                     txt_sobanthangdoi1.Text = dataRow["SoBanThangDoi1"].ToString();
-                    txt_sobanthangdoi2.Text = dataRow["SoBanThangDoi1"].ToString();
+                    txt_sobanthangdoi2.Text = dataRow["SoBanThangDoi2"].ToString();
                     dateTime.Value = Convert.ToDateTime(dataRow["NgayGio"].ToString());
                     LoadListView(e.Node.Tag.ToString());
                 }
